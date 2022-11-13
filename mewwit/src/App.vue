@@ -16,10 +16,7 @@ import Footer from './components/Footer.vue'
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 20vh;
-}
+
 
 
 </style>
