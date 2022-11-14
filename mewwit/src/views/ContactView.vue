@@ -37,9 +37,7 @@
     margin: 1rem;
     width: 90%;
 }
-h2 {
-    text-align: center;
-    font-size: 3rem;
-    font-weight: 700;
+h2{
+    padding-top: 3rem;
 }
 </style>

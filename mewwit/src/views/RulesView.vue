@@ -3,6 +3,7 @@
 </script>
 
 <template>
+    <h2>Rules and policies</h2>
     <div class="rules container">
         <h3>Mewwit Content Policy</h3>
         <p>Mewwit is a vast communitie that is created, run, and populated by you: the Mewwit users.
@@ -64,11 +65,15 @@
 </template>
 
 <style scoped>
+h2{
+    padding: 1rem!important;
+    font-family: var(--font-familiy1);
+}
 .rules {
     border: 2px solid var(--color5) !important;
     border-radius: 1rem;
     color: var(--color2);
-    padding: 0.5rem;
+    padding: 1rem;
     margin: 1rem;
     max-width: 90%;
     min-height: 80vh;
