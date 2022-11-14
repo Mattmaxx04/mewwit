@@ -6,5 +6,11 @@ body{
 }
 
 main{
-    min-height: 74vh;
+    min-height: 84vh;
+    z-index: 1;
   }
+  h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+}
