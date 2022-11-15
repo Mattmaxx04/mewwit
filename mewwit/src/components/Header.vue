@@ -30,7 +30,9 @@ nav{
   border-bottom: 0.2rem solid var(--color3) !important;
   min-height: 8vh;
 }
-
+.btn-primary{
+    background: var(--color7);
+}
 nav >div{
   justify-content: space-around!important;
 }

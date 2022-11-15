@@ -1,6 +1,6 @@
 <script setup>
 import Profilehead from '@/components/Profilehead.vue'
-
+import { RouterLink} from 'vue-router'
 </script>
 
 <template>
@@ -18,13 +18,12 @@ import Profilehead from '@/components/Profilehead.vue'
                     <div class="buttons">
                     <button class="btn "><i class="bi bi-star"></i></button>
                     <!-- <i class="bi bi-star-fill"></i> -->
-                    <button class="btn "><i class="bi bi-heart"></i></button>
+                    <button class="btn "><i class="bi bi-heart"></i> <p>0</p> </button>
                     <!-- <i class="bi bi-heart-fill"></i> -->
                 </div>
                 </div>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">More info</a>
+                <RouterLink to="/details" class="btn btn-primary">More info</RouterLink>
+                   
                     
                 </div>
             </div>
@@ -35,7 +34,12 @@ import Profilehead from '@/components/Profilehead.vue'
 </template>
 
 <style scoped>
-
+.btn-primary{
+    background: var(--color7);
+}
+.card-body{
+    background: var(--color2);
+}
 .profile {
     flex-direction: column;
     align-items: center;
@@ -52,5 +56,9 @@ import Profilehead from '@/components/Profilehead.vue'
     gap: 1rem;
     flex-direction: column;
     align-items: center;
+}
+.bi{
+    font-size: 1.5rem;
+    margin: 0.2rem;
 }
 </style>

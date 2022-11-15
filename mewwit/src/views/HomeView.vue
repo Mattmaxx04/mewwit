@@ -90,13 +90,19 @@ They are ranked and compete also for the title „Best Variety Kitten 6 – 10 m
     </div>
 
     <div class="brand d-flex">
+        <h4>Sponsors</h4>
+        <div class="brand__img d-flex">
         <img src="@/assets/whiskas.png" class="img-fluid" alt="" srcset="">
         <img src="@/assets/royal.jpg" class="img-fluid" alt="" srcset="">
         <img src="@/assets/proplan.png" class="img-fluid" alt="" srcset="">
     </div>
+</div>
 </template>
 
 <style scoped>
+.brand__img{
+    flex-direction: column;
+}
 .brand{
     gap:1rem;
     background: var(--color2);
@@ -104,6 +110,9 @@ They are ranked and compete also for the title „Best Variety Kitten 6 – 10 m
     margin: 1rem;
     margin-left: 1.4rem;
     width: 90%;
+}
+h4{
+    text-align: center;
 }
 .brand > img{
     width: 30%;
@@ -146,7 +155,9 @@ They are ranked and compete also for the title „Best Variety Kitten 6 – 10 m
     filter: drop-shadow(0.1rem 0.1rem 0.1rem #dee1d8);
 
 }
-
+.text-muted{
+    color: var(--color7) !important;
+}
 .carousel-item>img {
     border-radius: var(--border-radius);
     object-position: center;

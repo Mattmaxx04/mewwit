@@ -1,5 +1,5 @@
 <script setup>
-
+import { RouterLink} from 'vue-router'
 </script>
 
 <template>
@@ -17,10 +17,8 @@
                     <button class="btn "><i class="bi bi-heart"></i></button>
                     <!-- <i class="bi bi-heart-fill"></i> -->
                 </div>
-                </div>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">More info</a>
+                </div>                   
+                <RouterLink to="/details" class="btn btn-primary">More info</RouterLink>
                     
                 </div>
             </div>
@@ -37,5 +35,13 @@
     gap: 1rem;
     flex-direction: column;
     align-items: center;
+}
+
+.card-body{
+    background: var(--color2);
+}
+
+.btn-primary{
+    background: var(--color7);
 }
 </style>
