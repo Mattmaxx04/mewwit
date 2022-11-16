@@ -110,6 +110,7 @@ They are ranked and compete also for the title „Best Variety Kitten 6 – 10 m
     margin: 1rem;
     margin-left: 1.4rem;
     width: 90%;
+    flex-direction: column
 }
 h4{
     text-align: center;
