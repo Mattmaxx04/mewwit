@@ -5,7 +5,7 @@ import Inup from '@/components/Inup.vue';
 <template>
   <nav class="navbar bg-dark">
   <div class="container justify-content-center">
-      <img src="@/assets/logomew.png" alt="logo" width="200" >
+      <img src="@/assets/logomewnew.png" alt="logo" width="200" >
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
   <i class="bi bi-door-closed"></i>
 </button>
