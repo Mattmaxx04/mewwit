@@ -30,7 +30,7 @@ import Profilehead from '@/components/Profilehead.vue'
 <style scoped>
  
  .settings{
-    margin-top: 10rem;
+    margin-top: 6rem;
  }
  #settings__form{
     

@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleSlidesOnly" class="carousel" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active slide">
                 <img src="@/assets/proplanbanner.jpg" class="d-block w-100 slide" alt="banner1">
@@ -164,5 +164,14 @@ h4{
     object-position: center;
     object-fit: contain;
     max-height: 16vh;
+    width: 80vw;
+}
+
+@media (orientation: landscape) {
+    .carousel-item>img{
+
+        width: 80vw;
+    }
+
 }
 </style>
