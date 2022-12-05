@@ -5,10 +5,10 @@ import { RouterLink} from 'vue-router'
 
 <template>
     
-    <button class="btn huella" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+    <button class="btn huella" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
         <img src="@/assets/huella.png" alt="" width="30">
     </button>
-    <div class="offcanvas offcanvas-start d-flex" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas offcanvas-top d-flex" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTop">
        
             <RouterLink to="/"><i class="bi bi-house-door" data-bs-dismiss="offcanvas"></i></RouterLink>
             <RouterLink to="/posts"><i class="bi bi-card-list" data-bs-dismiss="offcanvas"></i></RouterLink>
@@ -26,19 +26,16 @@ import { RouterLink} from 'vue-router'
 .huella{
     background: var(--color3);
     margin: 0.5rem;
-    border: 2px solid var(--color6);
-    z-index: 999;
-    position: fixed;
+    border: 2px solid var(--color6);  
 }
-.offcanvas, .offcanvas-start{
-    
-    margin-top: 4.2rem;
-    margin-left: 0.5rem;
-    width: 20%!important;
-    height: 35%;
+.offcanvas, .offcanvas-top{  
+    margin-top: 5.1rem;
+    width: 100%;
+    height: 2.5rem!important;
+    flex-direction:row;
     background: var(--color1);
-    flex-direction: column;
     align-items: center;
+    gap:1rem;
     justify-content: center;
     border-radius: 1rem;
     padding: 2rem;

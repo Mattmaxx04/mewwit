@@ -15,7 +15,7 @@ import { RouterLink } from 'vue-router'
 
 <style scoped>
 .profile__img {
-    margin-left: 9rem;
+    margin-left: 8rem;
     width: 30%;
     border-radius: 40%;
     position: relative;
