@@ -1,49 +1,92 @@
 <script setup>
-import { RouterLink} from 'vue-router'
-import { ref} from 'vue';
+import { ref } from 'vue'
+import user from '../store/profile.js'
+import { addPost } from '../firebase/posts.js'
+import { posts } from '../firebase/posts.js'
+import Card from '../components/Card.vue'
 
-const posts = ref([
-    {id: crypto.randomUUID(),title: "Gatito 1",img: "https://www.animalfriends.co.uk/siteassets/media/images/article-images/cat-articles/38_afi_article1_caring-for-a-kitten-tips-for-the-first-month.png", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod optio esse tempora reiciendis inventore voluptates ut accusantium nisi pariatur laborum."},
-    {id: crypto.randomUUID(),title: "Gatito 2",img: "https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/Que_debes_saber_antes_de_adoptar_un_gatito.jpg?itok=guFplHEU", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod optio esse tempora reiciendis inventore voluptates ut accusantium nisi pariatur laborum."},
-    {id: crypto.randomUUID(),title: "Gatito 3",img: "https://images.unsplash.com/photo-1591871937631-2f64059d234f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod optio esse tempora reiciendis inventore voluptates ut accusantium nisi pariatur laborum."},
-    {id: crypto.randomUUID(),title: "Gatito 4",img: "https://estaticos.muyinteresante.es/uploads/images/gallery/5937e90a5bafe882f5bc09e6/gatitos-cesta_0.jpg", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod optio esse tempora reiciendis inventore voluptates ut accusantium nisi pariatur laborum."},
-    {id: crypto.randomUUID(),title: "Gatito 5",img: "https://estaticos.muyinteresante.es/uploads/images/gallery/59a669fc5bafe88febb3d6cc/gatito-cesped_0.jpg", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod optio esse tempora reiciendis inventore voluptates ut accusantium nisi pariatur laborum."},
-    {id: crypto.randomUUID(),title: "Gatito 6",img: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1199242002.jpg?crop=0.666xw:1.00xh;0.201xw,0&resize=480:*", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod optio esse tempora reiciendis inventore voluptates ut accusantium nisi pariatur laborum."},
-    {id: crypto.randomUUID(),title: "Gatito 7",img: "https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/Purina%C2%AE%20La%20llegada%20del%20gatito%20a%20casa.jpg?itok=_3VnSPSl", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod optio esse tempora reiciendis inventore voluptates ut accusantium nisi pariatur laborum."},
-    {id: crypto.randomUUID(),title: "Gatito 8",img: "https://superpet.pe/blog/wp-content/uploads/2021/07/Gatitos-bebe%CC%81s-Co%CC%81mo-cuidar-de-ellos-.jpg", description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod optio esse tempora reiciendis inventore voluptates ut accusantium nisi pariatur laborum."},
-])
+console.log(user);
+const post_img = ref('')
+const post_text = ref('')
+const post_title = ref('')
+
+
+const addNewPost = () => {
+    const newPost = {
+        post_id: crypto.randomUUID(),
+        post_img: post_img.value,
+        post_title: post_title.value,
+        post_text: post_text.value,        
+         user_id: user.id,
+         user_pic:user.photoURL,
+         user_name:user.displayName
+    }
+    addPost(newPost)
+}
 
 console.log(posts);
 </script>
 
 <template>
     <h2>Posts</h2>
-  <div class="post d-flex">
-            <div v-for="post in posts" class="card" style="width: 18rem;">
-                <img :src="post.img"
-                    class="card-img-start" alt="...">
-                <div class="card-body">
-                    <div class="card__fav d-flex">
-                    <h5 class="card-title">{{post.title}}</h5>
-                    <div class="buttons">
-                    <button class="btn "><i class="bi bi-star"></i></button>
-                    <!-- <i class="bi bi-star-fill"></i> -->
-                    <button class="btn "><i class="bi bi-heart"></i></button>
-                    <!-- <i class="bi bi-heart-fill"></i> -->
+    <div class="post__btn" v-if="user">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+            Post creation </button>
+        
+    </div>
+
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModal2Label" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content rounded-4 shadow">
+                <div class="modal-header p-5 pb-4 border-bottom-0">
+                    <h3 class="fw-bold mt-2 fs-2 sign">Post creation</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                </div>                   
-                <RouterLink :to="'./details?_id='+post.id" class="btn btn-primary">More info</RouterLink>
-                    
+
+                <div class="modal-body p-5 pt-0">
+                    <form class="">
+                        <div class="form-floating mb-2">
+                            <input v-model="post_title" type="text" class="form-control rounded-3" id="name"
+                                placeholder="name">
+                            <label for="name">title</label>
+                        </div>
+                        <div class="form-floating mb-2">
+                            <input v-model="post_img" type="url" class="form-control rounded-3" id="url"
+                                placeholder="https:\\yourimage.png">
+                            <label for="url">Image url</label>
+                        </div>
+                        <div class="form-floating mb-2">
+                            <input v-model="post_text" type="text" class="form-control rounded-3" id="title"
+                                placeholder="your title">
+                            <label for="title">message</label>
+                        </div>
+                        <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit"
+                            @click.prevent="addNewPost">Save</button>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
+    <Card v-for="post in posts" :post="post" :key="post.id" />
+
 </template>
 
 <style scoped>
-.card__fav{
+.post__btn {
+    display: flex;
+    justify-content: center;
+}
+
+.form__post {
+    height: 8rem !important;
+}
+
+.card__fav {
     justify-content: space-between;
     align-items: center;
 }
+
 .post {
     padding-top: 2rem;
     gap: 1rem;
@@ -51,11 +94,11 @@ console.log(posts);
     align-items: center;
 }
 
-.card-body{
+.card-body {
     background: var(--color2);
 }
 
-.btn-primary{
+.btn-primary {
     background: var(--color7);
 }
 </style>

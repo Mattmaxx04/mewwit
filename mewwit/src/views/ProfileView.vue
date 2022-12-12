@@ -1,11 +1,25 @@
 <script setup>
 import Profilehead from '@/components/Profilehead.vue'
 import { RouterLink} from 'vue-router'
+import Inup from '../components/Inup.vue';
+import user from '../store/profile.js'
+
+
+console.log(user);
+
+
+
 </script>
 
 <template>
-<Profilehead />
-    <div class="profile d-flex">
+    
+
+<Profilehead :user="user"/>
+
+<div v-if="!user" class="profile__help">
+    <Inup />
+</div>
+    <div  v-if="user" class="profile d-flex">
 
    <div class="profile__post d-flex">
     <h2>My posts</h2>
