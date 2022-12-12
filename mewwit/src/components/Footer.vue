@@ -25,9 +25,9 @@ font-size: 2rem;
 }
 .bottom__menu{
     align-items: center;
-    gap:1rem;
-    
+    gap:1rem;    
     justify-content: center;
+    margin-left: 24px;
 }
 .footer{width: 100%;
     bottom: 0;
@@ -40,7 +40,7 @@ font-size: 2rem;
     padding: 1rem;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
 }
 
 
