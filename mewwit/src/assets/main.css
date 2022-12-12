@@ -12,6 +12,7 @@ body{
 main{
     min-height: 84vh;
     z-index: 1;
+    margin-bottom: 6rem;
   }
   h2 {
     text-align: center;

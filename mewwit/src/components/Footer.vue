@@ -4,16 +4,36 @@
 
 <template>
     <div class="footer d-flex">
-        <h5>Mewwit ©</h5>
-        <p>Diseñado por Matías Quiroga <a href="https://www.linkedin.com/in/mat%C3%ADasquiroga/"><i class="bi bi-linkedin"></i></a></p>
+        <div class="d-flex bottom__menu" >
+       
+       <RouterLink to="/"><i class="bi bi-house-door" data-bs-dismiss="offcanvas"></i></RouterLink>
+       <RouterLink to="/posts"><i class="bi bi-card-list" data-bs-dismiss="offcanvas"></i></RouterLink>
+       <RouterLink :v-if="user" to="/profile"><i class="bi bi-person-circle" data-bs-dismiss="offcanvas"></i></RouterLink>
+       <RouterLink :v-if="user" to="/settings"><i class="bi bi-gear" data-bs-dismiss="offcanvas"></i></RouterLink>
+       <RouterLink to="/contact"><i class="bi bi-envelope-paper" data-bs-dismiss="offcanvas"></i></RouterLink>
+       <RouterLink to="/rules"><i class="bi bi-info-circle" data-bs-dismiss="offcanvas"></i></RouterLink>
+   
+</div>
+       
     </div>
 </template>
 
 <style scoped>
+.bi{
+color:var(--color3);
+font-size: 2rem;
+}
+.bottom__menu{
+    align-items: center;
+    gap:1rem;
+    
+    justify-content: center;
+}
 .footer{width: 100%;
+    bottom: 0;
+  position: fixed;
     margin-top: 1rem;
-    margin-bottom: -0.5rem;
-    min-height: 8vh;
+    min-height: 5vh;
     background: var(--color6);
     border-top: 0.2rem solid var(--color3) !important;
     color: var(--color4);
@@ -22,13 +42,6 @@
     justify-content: space-between;
     align-items: flex-start;
 }
-.footer > h5{
-    font-size: 1.5rem;
-    font-weight: 800;
-}
 
-.footer > p{
-    font-size: 1.2rem;
-    padding: 0.2rem;
-}
+
 </style>

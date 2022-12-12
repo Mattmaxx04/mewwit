@@ -22,9 +22,19 @@
 
 
     </form>
+
+    <p class="contactme">Diseñado por Matías Quiroga <a href="https://www.linkedin.com/in/mat%C3%ADasquiroga/"><i class="bi bi-linkedin"></i></a></p>
 </template>
 
 <style scoped>
+.contactme{
+    font-size: 1.2rem;
+    padding: 0.4rem;
+    border: 1px solid white;
+    border-radius: 1rem;
+    color: var(--color2);
+    text-align: center;
+}
 .field {
     font-size: 1.5rem;
     background: var(--color2);
@@ -41,5 +51,9 @@
 
 h2 {
     padding-top: 3rem;
+}
+label{
+    color: var(--color1);
+    font-size: 1rem;
 }
 </style>
