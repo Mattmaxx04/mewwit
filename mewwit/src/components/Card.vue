@@ -33,6 +33,7 @@ const props = defineProps({
                     <!-- <i class="bi bi-star-fill"></i> -->
                     <button class="btn "><i class="bi bi-heart"></i></button>
                     <!-- <i class="bi bi-heart-fill"></i> -->
+                    <button class="btn "><i class="bi bi-chat-dots"></i></button>                    
                 </div>
             </div>
            
@@ -41,7 +42,11 @@ const props = defineProps({
 </template>
 
 <style scoped>
+.buttons{
+    text-align: center;
+}
 .bi{
+    font-size: 1.5rem;
     color: var(--color4);
 }
 
@@ -55,6 +60,10 @@ const props = defineProps({
     width: 20%;
     border-radius: 50%;
     height: 25%;
+}
+.card-img-start{
+    margin: 2rem;
+    border-radius: 5%;
 }
 .card__fav{
 
