@@ -27,3 +27,15 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### To do List:
+
+- [ ] user
+- [] post
+- [] coments 
+- [] coments on post
+- [ ] make coment
+- [ ] make post
+- [ ] favorites
+- [ ] most comment post
+- [ ] most liked post
