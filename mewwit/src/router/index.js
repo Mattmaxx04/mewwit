@@ -18,12 +18,7 @@ const router = createRouter({
       path: "/details",
       name: "details",
       component: () => import("../views/DetailsView.vue"),
-    },
-    {
-      path: "/edit",
-      name: "edit",
-      component: () => import("../views/EditView.vue"),
-    },
+    },   
     {
       path: "/favorites",
       name: "favorites",
