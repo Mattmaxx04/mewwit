@@ -1,15 +1,18 @@
 <script setup>
-import { RouterLink } from 'vue-router'
+
+const props = defineProps({
+    user:{},
+})
 
 </script>
 
 <template>
-    <div class="profile__card">
+    <div v-if="user" class="profile__card">
      <div class="profile__titles d-flex gap-">
-        <h2>Matías</h2>       
+        <h3>{{user.displayName}}</h3>       
                                    
         </div>
-        <img class="profile__img" src="@/assets/chucho.jpg" alt="">
+        <img class="profile__img" :src="user.photoURL" alt="">
     </div>
 </template>
 
@@ -35,8 +38,8 @@ import { RouterLink } from 'vue-router'
     flex-direction: column;
 }
 
-h2{
-    margin-top: -5rem;
+h3{
+    margin-bottom: 5rem;
     padding-right: 0.3rem;
 }
 </style>

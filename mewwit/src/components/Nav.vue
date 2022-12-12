@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink} from 'vue-router'
-
+import user from '../store/profile.js'
 </script>
 
 <template>
@@ -12,8 +12,8 @@ import { RouterLink} from 'vue-router'
        
             <RouterLink to="/"><i class="bi bi-house-door" data-bs-dismiss="offcanvas"></i></RouterLink>
             <RouterLink to="/posts"><i class="bi bi-card-list" data-bs-dismiss="offcanvas"></i></RouterLink>
-            <RouterLink to="/profile"><i class="bi bi-person-circle" data-bs-dismiss="offcanvas"></i></RouterLink>
-            <RouterLink to="/settings"><i class="bi bi-gear" data-bs-dismiss="offcanvas"></i></RouterLink>
+            <RouterLink :v-if="user" to="/profile"><i class="bi bi-person-circle" data-bs-dismiss="offcanvas"></i></RouterLink>
+            <RouterLink :v-if="user" to="/settings"><i class="bi bi-gear" data-bs-dismiss="offcanvas"></i></RouterLink>
             <RouterLink to="/contact"><i class="bi bi-envelope-paper" data-bs-dismiss="offcanvas"></i></RouterLink>
             <RouterLink to="/rules"><i class="bi bi-info-circle" data-bs-dismiss="offcanvas"></i></RouterLink>
         
@@ -26,7 +26,11 @@ import { RouterLink} from 'vue-router'
 .huella{
     background: var(--color3);
     margin: 0.5rem;
+    height: 3rem;
     border: 2px solid var(--color6);  
+}
+.huella:hover{
+    background: var(--color2);
 }
 .offcanvas, .offcanvas-top{  
     margin-top: 5.1rem;
