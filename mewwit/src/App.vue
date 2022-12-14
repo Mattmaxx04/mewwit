@@ -23,5 +23,12 @@ main{
   padding-top: 6rem;
 }
 
+Header{
+  max-width: 100vw;
+}
+
+Footer{
+  max-width: 100vw;
+}
 
 </style>
