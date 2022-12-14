@@ -22,7 +22,7 @@ import { loginWithGoogle } from '../firebase/auth.js'
             data-bs-parent="#accordionExample">
             <div class="accordion-body">
 
-              <RouterLink to="/profile"> <button class="btn btn-lg btn-block btn-primary"
+              <RouterLink to="/posts"> <button class="btn btn-lg btn-block btn-primary"
                   style="background-color: #dd4b39;" @click="loginWithGoogle" data-bs-dismiss="modal"><i
                     class="bi bi-google me-2"></i> Sign in with google</button></RouterLink>
 

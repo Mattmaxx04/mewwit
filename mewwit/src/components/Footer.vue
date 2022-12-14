@@ -1,4 +1,5 @@
 <script setup>
+import user from '../store/profile.js';
 
 </script>
 
@@ -8,8 +9,12 @@
        
        <RouterLink to="/"><i class="bi bi-house-door" data-bs-dismiss="offcanvas"></i></RouterLink>
        <RouterLink to="/posts"><i class="bi bi-card-list" data-bs-dismiss="offcanvas"></i></RouterLink>
-       <RouterLink :v-if="user" to="/profile"><i class="bi bi-person-circle" data-bs-dismiss="offcanvas"></i></RouterLink>
-       <RouterLink :v-if="user" to="/settings"><i class="bi bi-gear" data-bs-dismiss="offcanvas"></i></RouterLink>
+
+<div class="user__only" v-if="user">
+       <RouterLink to="/profile"><i class="bi bi-person-circle" data-bs-dismiss="offcanvas"></i></RouterLink>
+       <RouterLink to="/settings"><i class="bi bi-gear" data-bs-dismiss="offcanvas"></i></RouterLink>
+    </div>
+
        <RouterLink to="/contact"><i class="bi bi-envelope-paper" data-bs-dismiss="offcanvas"></i></RouterLink>
        <RouterLink to="/rules"><i class="bi bi-info-circle" data-bs-dismiss="offcanvas"></i></RouterLink>
    
@@ -19,11 +24,16 @@
 </template>
 
 <style scoped>
+.user__only{
+    display: flex;
+    gap: 1rem;
+}
 .bi{
 color:var(--color3);
 font-size: 2rem;
 }
 .bottom__menu{
+    width: 100%;
     align-items: center;
     gap:1rem;    
     justify-content: center;

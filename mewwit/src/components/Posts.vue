@@ -1,7 +1,7 @@
 <script setup>
 import Newcomment from './NewComment.vue';
 import Comments from './Comments.vue';
-
+import user from '../store/profile.js';
 
 const props = defineProps({
     post: {},
@@ -136,5 +136,15 @@ h3 {
 
 .card-body {
     display: flex;
+}
+@media (orientation: landscape) {
+    .card{
+        flex-direction: row;
+    }
+    .img__user {
+    
+    width: 50%;
+    
+}
 }
 </style>

@@ -7,8 +7,11 @@ import { posts } from '../store/posts.js';
 import { ref, computed, onMounted } from 'vue';
 import { getComments } from '../firebase/comments.js';
 import { getPosts } from '../firebase/posts';
+import { comments } from '../store/comments.js';
 
 console.log(user);
+console.log(user.value);
+console.log(user.value.id);
 /*const userid = ref("")*/
 onMounted(()=>{
     getComments()
@@ -17,13 +20,10 @@ onMounted(()=>{
 
 
 const postsWithId = ref([])
-/*console.log(posts.value);
 
-userid.value = user.id;
-console.log(userid);
-*/
-console.log(user.value.id);
-console.log(posts.value);
+
+
+
 const updatePosts = computed(()=>{
     postsWithId.value = posts.value.filter(post => post.userid === user.value.id)
 })

@@ -100,6 +100,9 @@ They are ranked and compete also for the title „Best Variety Kitten 6 – 10 m
 </template>
 
 <style scoped>
+.card-body{
+    background: #118ab2;
+}
 .brand__img{
     flex-direction: column;
 }
@@ -169,7 +172,7 @@ h4{
 
 }
 .text-muted{
-    color: var(--color7) !important;
+    color:  #255471 !important;
 }
 .carousel-item>img {
     border-radius: var(--border-radius);
@@ -178,6 +181,7 @@ h4{
     max-height: 16vh;
     width: 80vw;
 }
+
 
 @media (orientation: landscape) {
     .carousel-item>img{
