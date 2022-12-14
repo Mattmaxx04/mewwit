@@ -1,23 +1,27 @@
 <script setup>
+import {comments} from '../store/comments.js'
+import { ref, computed } from 'vue';
+import  Comment  from './Comment.vue';
+
+const commentsWithId = ref([])
 
 const props = defineProps({
-    comment: {},
-    typeof: Object
+    postid: '',
+    typeOf:String,
 })
+
+const updateComments = computed(()=>{
+    commentsWithId.value = comments.value.filter(comment => comment.comment_postid === props.postid)
+})
+ 
 
 </script>
 
 <template>
+{{updateComments}}
 
-    <div class="comments">
-        <div class="comment">
-            <div class="data__user">
-                <p class="comment__user"></p>
-                <img src="" alt="" srcset="">
-            </div>
-            <p class="comment__body"></p>
-        </div>
-    </div>
+   <Comment v-for="comment in commentsWithId" :comment="comment" :key="comment.id" />
+
 </template>
 
 <style scoped>
