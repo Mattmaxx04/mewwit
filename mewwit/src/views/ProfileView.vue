@@ -6,15 +6,18 @@ import Posts from '../components/Posts.vue'
 import { posts } from '../store/posts.js';
 import { ref, computed } from 'vue';
 
+console.log(user);
+console.log(user.value.id);
+const userid = ref("")
 
 
 const postsWithId = ref([])
 console.log(posts.value);
-console.log(user.value.id);
-console.log(postsWithId);
+userid.value = user.value.id;
+console.log(userid);
 
 const updatePosts = computed(()=>{
-    postsWithId.value = posts.value.filter(post => post.userid === user.value.id)
+    postsWithId.value = posts.value.filter(post => post.userid === userid.value)
 })
 
 
