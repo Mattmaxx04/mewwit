@@ -9,13 +9,16 @@ import { ref, computed } from 'vue';
 
 
 const postsWithId = ref([])
-
-
+console.log(posts.value);
+console.log(user.value.id);
+console.log(postsWithId);
 
 const updatePosts = computed(()=>{
-    postsWithId.value = posts.value.filter(post => post.post_userid === user.id)
+    postsWithId.value = posts.value.filter(post => post.userid === user.value.id)
 })
 
+
+console.log(postsWithId);
 </script>
 
 <template>
@@ -30,7 +33,8 @@ const updatePosts = computed(()=>{
 
    <div class="profile__post d-flex">
     <h2>My posts</h2>
-    <Posts data-aos="fade-right" data-aos-duration="1500" v-for="post in postsWithId" :post="post" :key="post_id" />
+    <Posts data-aos="fade-up"
+     data-aos-delay="500"  v-for="post in postsWithId" :post="post" :key="post_id" />
     </div>
 </div>
 

@@ -26,7 +26,6 @@ onSnapshot(commentRef, (querySnapshot) => {
     };
     comments.value.push(comment);
     comments.value.sort((a,b)=>b.date - a.date)
-    console.log(comments);
   });
 });
 }

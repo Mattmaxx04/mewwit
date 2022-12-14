@@ -20,7 +20,8 @@ onMounted(()=>{
     <h2>Posts</h2>
    
     <NewPost />
-    <Posts data-aos-duration="2000" data-aos="fade-right" v-for="post in posts" :post="post" :key="post.id" />
+    <Posts data-aos="fade-up"
+     data-aos-delay="500" v-for="post in posts" :post="post" :key="post.id" />
 
 
 </template>
