@@ -1,20 +1,24 @@
 <script setup>
 import Profilehead from '@/components/Profilehead.vue'
-import { RouterLink} from 'vue-router'
 import Inup from '../components/Inup.vue';
 import user from '../store/profile.js'
+import Posts from '../components/Posts.vue'
+import { posts } from '../store/posts.js';
+import { ref, computed } from 'vue';
+
+const postsWithId = ref([])
 
 
-console.log(user);
 
-
-
+const updatePosts = computed(()=>{
+    postsWithId.value = posts.value.filter(post => post.post_userid === user.id)
+})
 </script>
 
 <template>
-    
+    {{updatePosts}}
 
-<Profilehead :user="user"/>
+<Profilehead :user="user"  />
 
 <div v-if="!user" class="profile__help">
     <Inup />
@@ -23,28 +27,9 @@ console.log(user);
 
    <div class="profile__post d-flex">
     <h2>My posts</h2>
-            <div v-for="i of 5" class="card" style="width: 18rem;">
-                <img src="https://t2.ea.ltmcdn.com/es/posts/7/4/3/como_ayudar_a_un_gatito_a_defecar_20347_orig.jpg"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <div class="card__fav d-flex">
-                    <h5 class="card-title">Card title</h5>
-                    <div class="buttons">
-                    <button class="btn "><i class="bi bi-star"></i></button>
-                    <!-- <i class="bi bi-star-fill"></i> -->
-                    <button class="btn "><i class="bi bi-heart"></i> <p>0</p> </button>
-                    <!-- <i class="bi bi-heart-fill"></i> -->
-                </div>
-                </div>
-                <RouterLink to="/details" class="btn btn-primary">More info</RouterLink>
-                   
-                    
-                </div>
-            </div>
-        </div>
-
+    <Posts v-for="post in postsWithId" :post="post" :key="post_id" />
     </div>
-
+</div>
 </template>
 
 <style scoped>
