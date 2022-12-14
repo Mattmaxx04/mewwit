@@ -46,7 +46,7 @@ const props = defineProps({
 
         </div>
 
-        <div class="comments">
+        <div v-if="user" class="comments">
             <Newcomment :postid="post.id"/>
             <Comments :postid="post.id"/>
 

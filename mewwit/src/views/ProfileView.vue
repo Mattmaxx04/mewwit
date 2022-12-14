@@ -4,20 +4,28 @@ import Inup from '../components/Inup.vue';
 import user from '../store/profile.js'
 import Posts from '../components/Posts.vue'
 import { posts } from '../store/posts.js';
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
+import { getComments } from '../firebase/comments.js';
+import { getPosts } from '../firebase/posts';
 
 console.log(user);
-console.log(user.value.id);
-const userid = ref("")
+/*const userid = ref("")*/
+onMounted(()=>{
+    getComments()
+    getPosts()
+})
 
 
 const postsWithId = ref([])
-console.log(posts.value);
-userid.value = user.value.id;
-console.log(userid);
+/*console.log(posts.value);
 
+userid.value = user.id;
+console.log(userid);
+*/
+console.log(user.value.id);
+console.log(posts.value);
 const updatePosts = computed(()=>{
-    postsWithId.value = posts.value.filter(post => post.userid === userid.value)
+    postsWithId.value = posts.value.filter(post => post.userid === user.value.id)
 })
 
 

@@ -23,11 +23,13 @@ onMounted(()=>{
     <Posts data-aos="fade-up"
      data-aos-delay="500" v-for="post in posts" :post="post" :key="post.id" />
 
-
+     
 </template>
 
 <style scoped>
-
+.toast-container{
+    z-index: 9999;
+}
 #Posts{
     max-width: 96vw;
 }

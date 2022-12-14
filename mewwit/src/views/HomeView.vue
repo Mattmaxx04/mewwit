@@ -105,7 +105,10 @@ They are ranked and compete also for the title „Best Variety Kitten 6 – 10 m
 }
 .brand{
     gap:1rem;
-    background: var(--color2);
+    background-image: linear-gradient(to bottom, #023047, #14425b, #255471, #356786, #457b9d);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     padding: 1rem;
     margin: 1rem;
     margin-left: 1.4rem;
@@ -114,9 +117,10 @@ They are ranked and compete also for the title „Best Variety Kitten 6 – 10 m
 }
 h4{
     text-align: center;
+    color: antiquewhite;
 }
 .brand > img{
-    width: 30%;
+    width: 28%;
 }
 .card{
     width: 80%;
@@ -125,13 +129,17 @@ h4{
     font-weight: 600;
 }
 .next {
+    color: #bedff5;
     margin-top: 1rem!important;
     max-width: 90vw;
     flex-direction: column;
     align-items: center;
     margin: auto;
     padding: 0.3rem;
-    background: var(--color4);
+    background-image: linear-gradient(to bottom, #023047, #14425b, #255471, #356786, #457b9d);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     border-radius: 0.2rem;
 }
 .about {
@@ -141,8 +149,12 @@ h4{
     margin-top: 1rem!important;
     margin: auto;
     padding: 0.3rem;
-    background: var(--color4);
+    background-image: linear-gradient(to bottom, #023047, #14425b, #255471, #356786, #457b9d);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     border-radius: 0.2rem;
+    color: rgb(167, 182, 218);
 }
 
 .about>p {

@@ -3,7 +3,7 @@ import {addPost} from '../firebase/posts.js'
 import { ref } from 'vue'
 import user from '../store/profile.js'
 
-
+const username = ref ('')
 const post_id = ref('')
 const post_date = ref('')
 const post_img = ref('')
@@ -29,6 +29,7 @@ const addNewPost = () => {
     post_img.value=" "
     post_title.value=" "
 }
+
 </script>
 
 <template>
@@ -66,13 +67,14 @@ const addNewPost = () => {
                             <label for="title">message</label>
                         </div>
                         <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit"
-                            @click.prevent="addNewPost" data-bs-dismiss="modal">Save</button>
+                            @click.prevent="addNewPost" data-bs-dismiss="modal" >Save</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
+   
 </template>
 
 <style scoped>

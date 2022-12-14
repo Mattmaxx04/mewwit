@@ -46,10 +46,11 @@ input{
 }
 button{
 
-    width: 10%;
+    width: 14%;
     margin-top: 0.2rem;
     background-color: var(--color3);
     padding: 0.5rem;
     font-size: 1rem;
+    border-radius: 0 1rem 1rem 0rem;
 }
 </style>

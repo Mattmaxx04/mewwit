@@ -12,6 +12,7 @@ const auth = getAuth(app);
 const loginWithGoogle = () =>{
     signInWithPopup(auth, provider)
     .then((result)=>{
+        
         let newUser = {
             displayName: result.user.displayName,
             photoURL: result.user.photoURL,
