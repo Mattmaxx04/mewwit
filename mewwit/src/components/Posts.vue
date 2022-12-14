@@ -33,7 +33,9 @@ const props = defineProps({
                 <!--<RouterLink :to="'./details?_id='+post.id" class="btn btn-primary" :post="post" :key="post.id" >More info</RouterLink>
                     -->
             </div>
+            <div class="img__post">
             <img :src="post.img" class="card-img-start" alt="...">
+        </div>
             <div class="buttons">
                 <button class="btn "><i class="bi bi-star"></i></button>
                 <!-- <i class="bi bi-star-fill"></i> -->
@@ -56,11 +58,16 @@ const props = defineProps({
 </template>
 
 <style scoped>
+.img__post{
+    display: flex;
+    justify-content: center;
+}
 .user__data{
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
+
 .comments{
     background-image: linear-gradient(to bottom, #023047, #14425b, #255471, #356786, #457b9d);
     background-size: cover;
@@ -85,7 +92,9 @@ h3 {
 }
 
 .post {
-   
+    background: #141E30;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     margin: 1rem;
     padding: 0.5rem;
     flex-direction: column;
@@ -95,6 +104,7 @@ h3 {
 }
 
 .img__user {
+    filter: drop-shadow(0 0 0.3rem #dee1d8);
     padding: 0.5rem;
     width: 20%;
     border-radius: 50%;
@@ -102,6 +112,7 @@ h3 {
 }
 
 .card-img-start {
+    filter: drop-shadow(0 0 0.3rem #dee1d8);
     width: 60%;
     margin: 2rem;
     border-radius: 5%;

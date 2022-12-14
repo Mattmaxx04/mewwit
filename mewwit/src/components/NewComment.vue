@@ -35,15 +35,17 @@ const addNewComment = () => {
 form{
     margin: 1rem;
     display: flex;
-    width: 95%;
+    width: 90%;
     height: 3rem;
 }
 
 input{
+    border-radius: 1rem 0rem 0rem 1rem;
     width: 90%;
     background-color: var(--color2);
 }
 button{
+
     width: 10%;
     margin-top: 0.2rem;
     background-color: var(--color3);
