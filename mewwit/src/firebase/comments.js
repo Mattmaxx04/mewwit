@@ -1,5 +1,5 @@
 import { app } from './index.js'
-import { getFirestore, collection, query, getDocs, addDoc } from 'firebase/firestore'
+import { onSnapshot, getFirestore, collection, query, getDocs, addDoc } from 'firebase/firestore'
 import {comments} from '../store/comments.js'
 
 const db = getFirestore(app)
@@ -8,16 +8,34 @@ const addComment =  (comment) => {
     addDoc(collection(db, "comments"), comment)
 }
 
-const q = query(collection(db, "comments"));
-const traerComments = async () =>{
-const querySnapshot = await getDocs(q);
-querySnapshot.forEach((doc) => {
-  console.log(doc.id, " => ", doc.data());
+const commentRef = query(collection(db, "comments"));
+
+/*obtengo todos los comments*/
+const getComments = () =>{
+onSnapshot(commentRef, (querySnapshot) => {
+  comments.value = [];
+  querySnapshot.forEach((doc) => {
+    
+    const comment = {
+      comment_id: doc.id,
+      comment_date:doc.data().comment_date.toDate(),
+      comment_postid:doc.data().comment_postid,
+      comment_body: doc.data().comment_body,
+      comment_username: doc.data().comment_username,
+      comment_uphoto:doc.data().comment_uphoto,
+    };
+    comments.value.push(comment);
+    comments.value.sort((a,b)=>b.date - a.date)
+    console.log(comments);
+  });
 });
 }
+
+
+
 /*var date = new Date();
 result = date.toTimeString();
 */
-export {addComment, traerComments }
+export { addComment, getComments }
 
 

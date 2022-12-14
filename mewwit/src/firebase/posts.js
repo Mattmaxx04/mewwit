@@ -1,15 +1,7 @@
 import { app } from "./index.js";
-import {
-  getFirestore,
-  onSnapshot,
-  collection,
-  query,
-  getDoc,
-  addDoc,
-  where,
-} from "firebase/firestore";
+import { getFirestore, onSnapshot, collection, query, getDoc, addDoc, where, deleteDoc } from "firebase/firestore";
 import { posts } from "../store/posts";
-
+import user from '../store/profile.js'
 
 /*conexion a la base de firebase*/
 const db = getFirestore(app);
@@ -18,25 +10,37 @@ const db = getFirestore(app);
 const postRef = collection(db, "posts");
 
 /*obtengo todos los posts*/
+const getPosts = () =>{
 onSnapshot(postRef, (querySnapshot) => {
   posts.value = [];
   querySnapshot.forEach((doc) => {
+    
     const post = {
       id: doc.id,
+      date:doc.data().post_date.toDate(),
       title: doc.data().post_title,
       img: doc.data().post_img,
-      body: doc.data().post_text,
-      user: doc.data().user_name,
-      pic:doc.data().user_pic
+      body: doc.data().post_body,
+      user: doc.data().post_username,
+      pic:doc.data().post_uphoto,
+      userid:doc.data().post_userid
     };
+
     posts.value.push(post);
+    posts.value.sort((a,b)=>b.date - a.date)
   });
 });
+}
 /*agrega posts*/
 const addPost = (post) => {
   addDoc(postRef, post);
 };
 
+const deletePost = (id)=>{
+  deleteDoc(doc(postRef,id))
+}
+
+/*
 const getPostWithId=(postId)=>{
   const q = query(postRef, where("postId", "==", postId));  
   let post = [] 
@@ -56,18 +60,7 @@ const getPostWithId=(postId)=>{
     return post
   })
 }
-
-/*
-const q = query(collection(db, "posts"));
-const traerPosts = async () =>{
-const querySnapshot = await getDocs(q);
-querySnapshot.forEach((doc) => {
-  console.log(doc.id, " => ", doc.data());
-});
-}*/
-/*var date = new Date();
-result = date.toTimeString();
 */
-// Add a new document in collection "cities"
 
-export {getPostWithId, addPost, posts };
+
+export { addPost, deletePost, getPosts };
