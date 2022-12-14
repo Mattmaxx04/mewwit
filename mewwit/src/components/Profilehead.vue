@@ -12,7 +12,7 @@ const props = defineProps({
         <h3>{{user.displayName}}</h3>       
                                    
         </div>
-        <img class="profile__img" :src="user.photoURL" alt="">
+        <img class="profile__img" :src="user.photoURL? user.photoURL : 'https://picsum.photo/200' " alt="">
     </div>
 </template>
 

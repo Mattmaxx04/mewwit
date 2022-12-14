@@ -4,6 +4,8 @@ import Nav from '@/components/Nav.vue'
 import user from '../store/profile.js'
 import {logOut} from '../firebase/auth.js'
 import { RouterLink} from 'vue-router'
+
+
 </script>
 
 <template>
@@ -13,7 +15,7 @@ import { RouterLink} from 'vue-router'
       <Nav />
       <div class="btn-group user__drop dropstart" v-if="user">
   <button type="button" class="btn user__btn btn-secondary " data-bs-toggle="dropdown" aria-expanded="false">
-    <img class="user__img"  :src="user? user.photoURL : 'https://picusm.photos/200'" alt="" srcset="">
+    <img class="user__img"  :src="user.photoURL? user.photoURL : 'https://picsum.photos/200'" alt="" srcset="">
   </button>
 
   <ul class="dropdown-menu">
