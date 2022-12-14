@@ -8,7 +8,29 @@ import { loginWithGoogle } from '../firebase/auth.js'
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content rounded-4 shadow">
       <div class="accordion" id="accordionExample">
-<!--
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+
+              Login with Google
+
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+
+              <RouterLink to="/profile"> <button class="btn btn-lg btn-block btn-primary"
+                  style="background-color: #dd4b39;" @click="loginWithGoogle" data-bs-dismiss="modal"><i
+                    class="bi bi-google me-2"></i> Sign in with google</button></RouterLink>
+
+            </div>
+          </div>
+        </div>
+
+
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-
@@ -42,28 +64,9 @@ import { loginWithGoogle } from '../firebase/auth.js'
             </div>
           </div>
         </div>
--->
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 
-              Login with Google
+       
 
-            </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-            data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-
-              <RouterLink to="/profile"> <button class="btn btn-lg btn-block btn-primary"
-                  style="background-color: #dd4b39;" @click="loginWithGoogle" data-bs-dismiss="modal"><i
-                    class="bi bi-google me-2"></i> Sign in with google</button></RouterLink>
-
-            </div>
-          </div>
-        </div>
-<!--
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingThree">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -101,7 +104,7 @@ import { loginWithGoogle } from '../firebase/auth.js'
             </div>
           </div>
         </div>
--->
+
       </div>
 
     </div>
