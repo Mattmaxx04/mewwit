@@ -11,7 +11,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="post d-flex">
+    <div class="post d-flex"  data-aos="fade-right">
 
 
         <div class="card" style="max-width: 94vw;">

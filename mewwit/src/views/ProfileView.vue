@@ -6,6 +6,8 @@ import Posts from '../components/Posts.vue'
 import { posts } from '../store/posts.js';
 import { ref, computed } from 'vue';
 
+
+
 const postsWithId = ref([])
 
 
@@ -28,9 +30,10 @@ const updatePosts = computed(()=>{
 
    <div class="profile__post d-flex">
     <h2>My posts</h2>
-    <Posts v-for="post in postsWithId" :post="post" :key="post_id" />
+    <Posts data-aos="fade-right" v-for="post in postsWithId" :post="post" :key="post_id" />
     </div>
 </div>
+
 </template>
 
 <style scoped>
@@ -44,6 +47,7 @@ const updatePosts = computed(()=>{
     flex-direction: column;
     align-items: center;
     min-height: 40vh;
+    max-width: 85vw;
 }
 
 .card__fav{

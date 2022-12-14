@@ -1,9 +1,13 @@
 <script setup>
-
+import { onMounted } from 'vue';
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import { RouterView} from 'vue-router'
+import AOS from 'aos';
 
+onMounted(() => {
+    AOS.init();
+})
 
 </script>
 
@@ -16,6 +20,7 @@ import { RouterView} from 'vue-router'
     <RouterView />
   </main>
   <Footer />
+  
 </template>
 
 <style scoped>
