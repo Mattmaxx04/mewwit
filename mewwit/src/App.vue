@@ -25,7 +25,10 @@ onMounted(() => {
 
 <style scoped>
 main{
+  display: flex;
   padding-top: 6rem;
+  flex-direction: column;
+    align-items: center;
 }
 
 Header{

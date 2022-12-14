@@ -14,16 +14,13 @@ onMounted(()=>{
 })
 
 
-console.log(comments);
-console.log(posts);
-
 </script>
 
 <template>
     <h2>Posts</h2>
    
     <NewPost />
-    <Posts data-aos="fade-right" v-for="post in posts" :post="post" :key="post.id" />
+    <Posts data-aos-duration="2000" data-aos="fade-right" v-for="post in posts" :post="post" :key="post.id" />
 
 
 </template>

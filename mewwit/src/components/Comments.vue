@@ -20,7 +20,7 @@ const updateComments = computed(()=>{
 <template>
 {{updateComments}}
 
-   <Comment data-aos="fade-left" v-for="comment in commentsWithId" :comment="comment" :key="comment.id" />
+   <Comment data-aos-duration="1500" data-aos="fade-left" v-for="comment in commentsWithId" :comment="comment" :key="comment.id" />
 
 </template>
 

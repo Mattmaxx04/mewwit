@@ -30,7 +30,7 @@ const updatePosts = computed(()=>{
 
    <div class="profile__post d-flex">
     <h2>My posts</h2>
-    <Posts data-aos="fade-right" v-for="post in postsWithId" :post="post" :key="post_id" />
+    <Posts data-aos="fade-right" data-aos-duration="1500" v-for="post in postsWithId" :post="post" :key="post_id" />
     </div>
 </div>
 
