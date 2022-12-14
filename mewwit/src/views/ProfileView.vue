@@ -13,6 +13,7 @@ const postsWithId = ref([])
 const updatePosts = computed(()=>{
     postsWithId.value = posts.value.filter(post => post.post_userid === user.id)
 })
+
 </script>
 
 <template>
