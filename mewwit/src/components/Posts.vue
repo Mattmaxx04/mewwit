@@ -37,11 +37,14 @@ const props = defineProps({
             <img :src="post.img" class="card-img-start" alt="...">
         </div>
             <div class="buttons">
-                <button class="btn "><i class="bi bi-star"></i></button>
+                <button class="btn "><i class="bi bi-star"></i> </button>
+                <small>0</small> 
                 <!-- <i class="bi bi-star-fill"></i> -->
                 <button class="btn "><i class="bi bi-heart"></i></button>
                 <!-- <i class="bi bi-heart-fill"></i> -->
+                <small>0</small>
                 <button class="btn "><i class="bi bi-chat-dots"></i></button>
+                <small>0</small>
             </div>
 
         </div>
@@ -66,6 +69,10 @@ const props = defineProps({
     display: flex;
     align-items: center;
     justify-content: flex-start;
+}
+
+.bi::after{
+    fill: tomato!important;
 }
 
 .comments{

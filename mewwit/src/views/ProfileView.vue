@@ -9,9 +9,6 @@ import { getComments } from '../firebase/comments.js';
 import { getPosts } from '../firebase/posts';
 import { comments } from '../store/comments.js';
 
-console.log(user);
-console.log(user.value);
-console.log(user.value.id);
 /*const userid = ref("")*/
 onMounted(()=>{
     getComments()
@@ -28,8 +25,6 @@ const updatePosts = computed(()=>{
     postsWithId.value = posts.value.filter(post => post.userid === user.value.id)
 })
 
-
-console.log(postsWithId);
 </script>
 
 <template>
