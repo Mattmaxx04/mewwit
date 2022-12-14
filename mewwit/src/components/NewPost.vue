@@ -32,8 +32,8 @@ const addNewPost = () => {
 </script>
 
 <template>
-<!-- <div class="post__btn" v-if="user">-->
-    <div class="post__btn" >
+<div class="post__btn" v-if="user">
+    
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
             Post creation </button>
 
