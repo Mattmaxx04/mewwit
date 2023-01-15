@@ -71,7 +71,8 @@ import { RouterLink} from 'vue-router'
   margin-right: -8rem!important;
 }
 .logout__btn{
-  background: var(--color2);
+  background: var(--color6);
+  color: cornflowerblue;
   border: 2px solid var(--color1);
   font-weight: 700;
 }
