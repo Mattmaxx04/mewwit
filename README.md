@@ -3,10 +3,8 @@
 
 [![](assets/petshop-madalu.svg)]()
 
-_PetShop Madalu._
-_Se realizan diferentes páginas solicitadas por el cliente. El sitio es totalmente responsive y dinámico._
-_Cuenta con dos secciones de compras: JUGUETES y FARMACIA, un buscador por texto, y un carrito de compras._
+_Mewwit._
+_Mewwit es un foro al estilo reedit. El sitio es mobile first._
+_Cuenta con diferentes secciones, post, comments. Y permite realizar logueo desde google._
 
- [![](assets/petshoplanding.png)]()
- [![](assets/petshopcart.png)]()
- [![](assets/petshopfooter.png)]()
+ [![](mewwit/src/assets/mewwmockup.png)]()
